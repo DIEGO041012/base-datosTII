@@ -43,7 +43,7 @@ $conexion = conectarBD();
                     <a class="nav-link" href="./cronogramas.php"><i class="far fa-address-book"></i>Cronograma</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-clone"></i>Base datos TI</a>
+                    <a class="nav-link" href="./base_datos.php"><i class="far fa-clone"></i>Base datos TI</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./prestamos.php"><i class="far fa-chart-bar"></i>Prestamos</a>
