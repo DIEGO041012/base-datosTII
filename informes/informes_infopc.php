@@ -1,38 +1,67 @@
 <html>
   <head>
+    <div class="sm:text-center text-5xl">
+      <h1>informacion pc</h1>
+    </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="./principal.css">
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
+
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Language', 'Speakers (in millions)'],
-          ['nombrepersona', 13], ['Bengali', 83], ['Bodo', 1.4],
-          ['Dogri', 2.3], ['Gujarati', 46], ['Hindi', 300],
-          ['Kannada', 38], ['Kashmiri', 5.5], ['Konkani', 5],
-          ['Maithili', 20], ['Malayalam', 33], ['Manipuri', 1.5],
-          ['Marathi', 72], ['Nepali', 2.9], ['Oriya', 33],
-          ['Punjabi', 29], ['Sanskrit', 0.01], ['Santhali', 6.5],
-          ['Sindhi', 2.5], ['Tamil', 61], ['Telugu', 74], ['Urdu', 52]
+          ['Task', 'Hours per Day'],
+          ['activo_fijo', 8],
+          ['persona_encargado', 3],
+          ['marca', 4],
+          ['serie', 1],
+          ['perifericos', 8]
         ]);
 
         var options = {
-          title: 'Informacion_pc',
-          legend: 'none',
-          pieSliceText: 'label',
-          slices: {  4: {offset: 0.2},
-                    12: {offset: 0.3},
-                    14: {offset: 0.4},
-                    15: {offset: 0.5},
-          },
+          title: 'informacion_pc',
+          pieHole: 0.4,
+          sliceVisibilityThreshold: 0, // Muestra todas las etiquetas
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
+        google.visualization.events.addListener(chart, 'select', selectHandler);
+
+        function selectHandler() {
+          var selectedItem = chart.getSelection()[0];
+          if (selectedItem) {
+            // Obtiene la etiqueta de la porción seleccionada
+            var selectedLabel = data.getValue(selectedItem.row, 0);
+            
+            // Redirige a la página correspondiente según la etiqueta seleccionada
+            switch (selectedLabel) {
+              case 'activo_fijo':
+                window.location.href = '';
+                break;
+              case 'persona_encargada':
+                window.location.href = '';
+                break;
+              case 'marca':
+                window.location.href = '';
+                break;
+              case 'serie':
+                window.location.href = '';
+                break;
+              case 'perifericos':
+                window.location.href = '';
+                break;
+              // Agrega más casos según sea necesario
+            }
+          }
+        }
+
         chart.draw(data, options);
       }
     </script>
   </head>
   <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div id="donutchart" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
