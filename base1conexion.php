@@ -5,19 +5,6 @@
 
 // Verifica si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // // Conexión a la base de datos
-    // $servidor = "localhost";
-    // $usuario = "root";
-    // $contrasena = "root";
-    // $base_datos = "base_de_datos_ti"; // Reemplaza con el nombre de tu base de datos
-
-    // $conexion = new mysqli($servidor, $usuario, $contrasena, $base_datos);
-
-    // // Verifica la conexión
-    // if ($conexion->connect_error) {
-    //     die("Error en la conexión: " . $conexion->connect_error);
-    
 
     // Recupera los datos del formulario
     $personaEncargada = $_POST["personaEncargada"];

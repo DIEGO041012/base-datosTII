@@ -8,14 +8,14 @@ function clickOnbuttons() {
     $('#guardar').click(function(elm){
         elm.preventDefault();
 
-        var formulario = document.getElementById('miinventario');
+        var formulario = document.getElementById('miFormulario');
         var formData = new FormData(formulario);
 
         formData.forEach(function(valor, clave){
             console.log(clave + ": " + valor);
         });
         
-        fetch('./procesar_inventario.php', {
+        fetch('./procesar/procesar_cronograma.php', {
             method: 'POST',
             body: formData,
         })

@@ -5,19 +5,21 @@ $conexion = conectarBD();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['formSubmitted'])) {
     // Aquí obtienes los datos del formulario
-   $area_asignada = $_POST['area_asignada'];
-   $nombre_apellido = $_POST['nombre_apellido'];
-   $tipo = $_POST['tipo'];
-   $fecha = $_POST['fecha'];
+    $mantenimiento_asignado = $_POST['mantenimiento'];
+    $nombre = $_POST['nombre'];
+    $area = $_POST['area'];
+    $fecha = $_POST['fecha'];
     // Puedes obtener los otros campos de la misma manera
 
     // Por ejemplo, solo imprimo los datos por ahora:
-    echo "tipo: " . $tipo . "<br>";
-    echo "cantidad: " . $cantidad . "<br>";
+    echo "mantenimiento_asignado: " . $mantenimiento_asignado . "<br>";
+    echo "nombre: " . $nombre . "<br>";
+    echo "area: " . $area . "<br>";
     echo "fecha: " . $fecha . "<br>";
     // Puedes imprimir los otros campos de la misma manera.
 
-    $sql = "INSERT INTO perstamo(area_asignada, nombre_apellido, tipo,fecha) VALUES ('$area_asignadao','$nombre_apellido','$tipo','$fecha')";
+    $sql = "INSERT INTO cronograma(mantenimiento_asignado, nombre, area, fecha) VALUES ('$mantenimiento_asignado','$nombre','$area','$fecha')";
+
     $conexion->query($sql);
 
 }

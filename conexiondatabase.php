@@ -2,7 +2,7 @@
 function conectarBD(){
     $servidor="localhost";
     $usuario="root";
-    $contraseña="root";
+    $contraseña="diego041012";
     $basedatos="base_de_datos_ti";
     
     $conexion=new mysqli($servidor,$usuario,$contraseña,$basedatos);

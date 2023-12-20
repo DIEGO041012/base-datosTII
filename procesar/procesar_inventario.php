@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['formSubmitted'])) {
     // Puedes imprimir los otros campos de la misma manera.
 
     $sql = "INSERT INTO inventario(tipo, cantidad, fecha) VALUES ('$tipo','$cantidad','$fecha')";
+
     $conexion->query($sql);
 
 }

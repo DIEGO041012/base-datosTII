@@ -1,16 +1,7 @@
-<?php
-
-    include('base1conexion.php');
-
-    $conexion = conectarBD();
-
-
-
-?>
 <html>
   <head>
     <div class="sm:text-center text-5xl">
-      <h1>Base datos TI </h1>
+      <h1>Presrtamos</h1>
     </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="./principal.css">
@@ -21,15 +12,15 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['informacion_pc', 11],
-          ['cronograma', 2],
-          ['inventario', 2],
-          ['prestamos', 2],
-          ['movimientos', 7]
+          ['bases', 8],
+          ['teclados', 3],
+          ['usb_wifi', 4],
+          ['us_vga', 1],
+          ['mause', 8]
         ]);
 
         var options = {
-          title: 'Informes TI',
+          title: 'existencias',
           pieHole: 0.4,
           sliceVisibilityThreshold: 0, // Muestra todas las etiquetas
         };
@@ -55,8 +46,8 @@
               case 'inventario':
                 window.location.href = './informes/informes_inventario.php';
                 break;
-              case 'prestamos':
-                window.location.href = './informes/informes_prestamos.php';
+              case 'existencias':
+                window.location.href = './informes/informes_bajas.php';
                 break;
               case 'movimientos':
                 window.location.href = './informes/informes_prestamos.php';

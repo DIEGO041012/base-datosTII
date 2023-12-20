@@ -3,29 +3,19 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function clickOnbuttons() { 
-//     var fs = require('fs');
-// var msg = "Hola, mundo!";
-// fs.writeFile('app.js', 'var msg = "' + msg + '";', function (err) {
-//   if (err) throw err;
-//   console.log('Archivo guardado!');
-    // document.getElementById('guardar').addEventListener('click', e=>{
-    //     e.preventDefault();
-
-    //     console.log('click en guardar');
-    // })
 
     $('#guardar').click(function(elm){
         elm.preventDefault();
 
         var formulario = document.getElementById('miFormulario');
         var formData = new FormData(formulario);
-
+        
         // console.log(typeof(formulario));
         formData.forEach(function(valor, clave){
             console.log(clave + ": " + valor);
         });
         
-        fetch('./procesar_formulario.php', {
+        fetch('./procesar/procesar_prestamos.php', {
             method: 'POST',
             body: formData,
         })
@@ -38,10 +28,6 @@ function clickOnbuttons() {
                 // return response.json();
             }
         })
-
-
-        // console.log('click en guardar');
-
 
     });
 }
