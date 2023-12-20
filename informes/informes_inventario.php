@@ -11,28 +11,28 @@
         var chartDiv = document.getElementById('chart_div');
 
         var data = google.visualization.arrayToDataTable([
-          ['Galaxy', 'Distance', 'Brightness'],
-          ['Canis Major Dwarf', 8000, 23.3],
-          ['Sagittarius Dwarf', 24000, 4.5],
-          ['Ursa Major II Dwarf', 30000, 14.3],
-          ['Lg. Magellanic Cloud', 50000, 0.9],
-          ['Bootes I', 60000, 13.1]
+          ['bodega', 'Entrada', 'Salida'],
+          ['bases', 15, 7],
+          ['teclados', 60, 20],
+          ['mause', 90, 30],
+          ['disco solido', 150, 45],
+          ['usb wifi', 180, 60]
         ]);
 
         var materialOptions = {
           width: 900,
           chart: {
-            title: 'Nearby galaxies',
-            subtitle: 'distance on the left, brightness on the right'
+            title: 'Inventario',
+            subtitle: 'Especificaciones de los movimientos en bodega'
           },
           series: {
-            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
-            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+            0: { axis: 'dias' }, // Bind series 0 to an axis named 'dias'.
+            1: { axis: 'meses' } // Bind series 1 to an axis named 'meses'.
           },
           axes: {
             y: {
-              distance: {label: 'parsecs'}, // Left y-axis.
-              brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
+              dias: {label: 'Días'}, // Left y-axis.
+              meses: {side: 'right', label: 'Meses'} // Right y-axis.
             }
           }
         };
@@ -43,25 +43,25 @@
             0: {targetAxisIndex: 0},
             1: {targetAxisIndex: 1}
           },
-          title: 'Nearby galaxies - distance on the left, brightness on the right',
+          title: 'Inventario - Especificaciones de los movimientos en bodega',
           vAxes: {
             // Adds titles to each axis.
-            0: {title: 'parsecs'},
-            1: {title: 'apparent magnitude'}
+            0: {title: 'Días'},
+            1: {title: 'Meses'}
           }
         };
 
         function drawMaterialChart() {
           var materialChart = new google.charts.Bar(chartDiv);
           materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-          button.innerText = 'Change to Classic';
+          button.innerText = 'Cambiar a Clásico';
           button.onclick = drawClassicChart;
         }
 
         function drawClassicChart() {
           var classicChart = new google.visualization.ColumnChart(chartDiv);
           classicChart.draw(data, classicOptions);
-          button.innerText = 'Change to Material';
+          button.innerText = 'Cambiar a Material';
           button.onclick = drawMaterialChart;
         }
 
@@ -70,7 +70,7 @@
     </script>
   </head>
   <body>
-    <button id="change-chart">Change to Classic</button>
+    <button id="change-chart">Modo Clásico</button>
     <br><br>
     <div id="chart_div" style="width: 800px; height: 500px;"></div>
   </body>
