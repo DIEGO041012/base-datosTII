@@ -4,15 +4,7 @@ include('base1conexion.php');
 
 $conexion = conectarBD();
 
-
-
-
-
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en" >
