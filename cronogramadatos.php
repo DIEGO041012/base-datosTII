@@ -5,7 +5,7 @@ include('base1conexion.php');
 $conexion = conectarBD();
 
   if($conexion){
-    $sql = "SELECT * FROM prestamos";
+    $sql = "SELECT * FROM cronograma";
     
     
 
@@ -30,20 +30,20 @@ $conexion = conectarBD();
 <body>
 <nav class="navbar navbar-expand-lg bg-danger">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="./ingreso.php">Base de datos</a>
+    <a class="navbar-brand text-white" href="./base_datos.php">comestiblesDan</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="./informacionpc_base.php">informacion pc</a>
+          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">informacion pc</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="./cronogramadatos.php">cronograma</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="prestamosbase.php">prestamos</a>
+          <a class="nav-link text-white" href="./prestamosbase.php">prestamos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,29 +68,8 @@ $conexion = conectarBD();
   </div>
 </nav>
 
-
-<!--<div class="prestamos">
-    <div class="titulo">Prestamos</div>
-    <div class="cabecera">
-      <span>area</span>
-      <span>nombres</span>
-      <span>tipo</span>
-      <span>fecha ingreso</span>
-      <span>fecha sistema</span>
-    </div>
-    <?php while($prestamo = $resultado->fetch_assoc()):?>
-      <div class="prestamo" id="<?php echo $prestamo['id']?>">
-        <div class="area"><?php echo $prestamo['area']?></div>
-        <div class="nombres"><?php echo $prestamo['nombres']?></div>
-        <div class="tipo"><?php echo $prestamo['tipo']?></div>
-        <div class="fecha"><?php echo $prestamo['fecha_ingreso']?></div>
-        <div class="fechaSistema"><?php echo $prestamo['fecha']?></div>
-      </div>
-    <?php endwhile ;?>
-  </div>
-
   <div class="prestamos">
-    <div class="titulo">Cronograma</div>
+    <div class="titulo1">Cronograma</div>
     <div class="cabecera">
       <span>mantenimiento_asignado</span>
       <span>nombres</span>
@@ -103,11 +82,10 @@ $conexion = conectarBD();
         <div class="mantenimiento_asignado"><?php echo $cronograma['mantenimiento_asignado']?></div>
         <div class="nombre"><?php echo $cronograma['nombre']?></div>
         <div class="area"><?php echo $cronograma['area']?></div>
-        <div class="fecha"><?php echo $cronograma['fecha_ingreso']?></div>
-        <div class="fechaSistema"><?php echo $cronograma['fecha']?></div>
+        <div class="fecha"><?php echo $cronograma['fecha']?></div>
       </div>
     <?php endwhile ;?>
-  </div>-->
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>

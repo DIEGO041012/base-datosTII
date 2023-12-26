@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 20px;
+    
+}
+
+.titulo {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cabecera {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 70%;
+    margin-bottom: 10px;
+    background-color: #f8f9fa; /* Color de fondo para la cabecera */
+    font-weight: bold; /* Texto en negrita para la cabecera */
+}
+
+.cabecera span {
+    border: 5px solid #dee2e6;
+    padding: 15px;
+    text-align: center;
+}
+
+.tabla {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    margin-bottom: 5px;
+}
+
+.tabla div {
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    text-align: center;
+}

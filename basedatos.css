@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+
+  .prestamos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .titulo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .cabecera {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 70%;
+    margin-bottom: 10px;
+  }
+
+  .cabecera span {
+    border: 5px solid red;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .prestamo {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 5px;
+  }
+
+  .prestamo div {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  .cronograma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .cronograma div {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  .cronograma {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 5px;
+  }
+  .inventario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .inventario div {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  .inventario {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 5px;
+  }
+  .titulo1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .titulo2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
