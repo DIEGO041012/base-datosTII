@@ -2,63 +2,44 @@ body {
     font-family: Arial, sans-serif;
   }
 
-  /* .informacion_pc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
-  } */
-
   .titulo1 {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
+    text-align: center;
   }
 
   .container_tabla{
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
   }
   .cabecera ,.informacion_pc{
     display: grid;
     grid-template-columns: repeat(10, calc(100%/10));
-    width: 80%;
-    margin-bottom: 10px;
+    width: 95%;
+    margin-bottom: 5px;
 
   }
 
   .cabecera span{
-    border: 5px solid red;
-    padding: 10px;
+    background-color: rgb(243, 92, 92);
+    padding: 5px;
     text-align: center;
     overflow: hidden;
-    /* white-space: nowrap; */
+    
   }
   .informacion_pc > div{
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* background-color: antiquewhite; */
     border: 1px solid black;
-    /* white-space: nowrap; */
   }
   .informacion_pc > div:not(:last-of-type) {
     margin-bottom: 5px;
   }
 
-  /* .informacion_pc {
-    width: 70%;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    margin-bottom: 5px;
-  } */
-/* 
-  .informacion_pc div {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-  } */
+  

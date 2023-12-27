@@ -78,6 +78,7 @@ conectarBD();
           <option value="usb_vga">USB VGA</option>
           <option value="multipuerto">Multipuerto</option>
           <option value="disco_solido">Disco Sólido</option>
+          <option value="cable_hdmi">Cable hdmi</option>
         </select>
       </div>
     </div>
