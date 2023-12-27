@@ -37,10 +37,10 @@ $conexion = conectarBD();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">informacion pc</a>
+          <a class="nav-link active text-white" aria-current="page" href="./informacionpc_base.php">informacion pc</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./cronogramadatos.php">cronograma</a>
+          <a class="nav-link text-white" href="./cronogramas.php">cronograma</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="./prestamosbase.php">prestamos</a>
@@ -73,10 +73,10 @@ $conexion = conectarBD();
     <div class="cabecera">
       <span>mantenimiento_asignado</span>
       <span>nombres</span>
-      <span>area</span>
-      
+      <span>area</span>      
       <span>fecha sistema</span>
     </div>
+    
     <?php while($cronograma = $resultado->fetch_assoc()):?>
       <div class="cronograma" id="<?php echo $cronograma['id']?>">
         <div class="mantenimiento_asignado"><?php echo $cronograma['mantenimiento_asignado']?></div>

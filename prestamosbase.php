@@ -37,13 +37,13 @@ $conexion = conectarBD();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">informacion pc</a>
+          <a class="nav-link active text-white" aria-current="page" href="./informacionpc_base.php">informacion pc</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="./cronogramadatos.php">cronograma</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./prestamosbase.php">prestamos</a>
+          <a class="nav-link text-white" href="./prestamos.php">prestamos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

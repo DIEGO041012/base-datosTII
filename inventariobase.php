@@ -57,7 +57,7 @@ $conexion = conectarBD();
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./inventariobase.php">inventario</a>
+          <a class="nav-link text-white" href="./inventario.php">inventario</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

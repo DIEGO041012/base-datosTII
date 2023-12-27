@@ -68,39 +68,44 @@ $conexion = conectarBD();
   </div>
 </nav>
 
-
-<div class="prestamos">
-    <div class="titulo">informacion PC</div>
-    <div class="cabecera">
-      <span>persona_encargada</span>
-      <span>marca</span>
-      <span>modelo</span>
-      <span>disco_duro</span>
-      <span>memoria_Ram</span>
-      <span>procesador</span>
-      <span>nombre_pc</span>
-      <span>conexion</span>
-      <span>activo_fijo</span>
-      <span>mac</span>
-      <!--<span>sistema_operativo</span>
-      <span>serie</span>
-      <span>velocidad</span>
-      <span>perifericos</span>
-      <span>limpieza_externa</span>
-      <span>limpieza_interna</span>
-      <span>desmontaje _de_equipo</span>-->
-      
-    </div>
-    <?php while($informacion_pc = $resultado->fetch_assoc()):?>
-      <div class="prestamo" id="<?php echo $informacion_pc['id']?>">
-        <div class="area"><?php echo $informacion_pc['area']?></div>
-        <div class="nombres"><?php echo $informacion_pc['nombres']?></div>
-        <div class="tipo"><?php echo $informacion_pc['tipo']?></div>
-        <div class="fecha"><?php echo $informacion_pc['fecha_ingreso']?></div>
-        <div class="fechaSistema"><?php echo $informacion_pc['fecha']?></div>
-      </div>
-    <?php endwhile ;?>
+<div class="titulo1">informacion PC</div>
+<div class="container_tabla">
+<div class="cabecera">
+  <span>encargado</span>
+  <span>marca</span>
+  <span>modelo</span>
+  <span>disco_duro</span>
+  <span>RAM</span>
+  <span>procesador</span>
+  <span>nombre_pc</span>
+  <span>conexion</span>
+  <span>activo_fijo</span>
+  <span>mac</span>
+  <!--<span>sistema_operativo</span>
+  <span>serie</span>
+  <span>velocidad</span>
+  <span>perifericos</span>
+  <span>limpieza_externa</span>
+  <span>limpieza_interna</span>
+  <span>desmontaje _de_equipo</span>-->
+  
+</div>
+<?php while($informacion_pc = $resultado->fetch_assoc()):?>
+  <div class="informacion_pc" id="<?php echo $informacion_pc['id_informacion_pc']?>">
+    <div class="persona_encargada"><?php echo $informacion_pc['persona_encargada']?></div>
+    <div class="marca"><?php echo $informacion_pc['marca']?></div>
+    <div class="modelo"><?php echo $informacion_pc['modelo']?></div>
+    <div class="disco_duro"><?php echo $informacion_pc['disco_duro']?></div>
+    <div class="memoria_RAM"><?php echo $informacion_pc['memoria_RAM']?></div>
+    <div class="procesador"><?php echo $informacion_pc['procesador']?></div>
+    <div class="nombre_pc"><?php echo $informacion_pc['nombre_pc']?></div>
+    <div class="conexion"><?php echo $informacion_pc['conexion']?></div>
+    <div class="activo_fijo"><?php echo $informacion_pc['activo_fijo']?></div>
+    <div class="mac"><?php echo $informacion_pc['mac']?></div>
   </div>
+<?php endwhile ;?>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>

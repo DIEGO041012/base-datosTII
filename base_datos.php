@@ -68,47 +68,6 @@ $conexion = conectarBD();
   </div>
 </nav>
 
-
-<!--<div class="prestamos">
-    <div class="titulo">Prestamos</div>
-    <div class="cabecera">
-      <span>area</span>
-      <span>nombres</span>
-      <span>tipo</span>
-      <span>fecha ingreso</span>
-      <span>fecha sistema</span>
-    </div>
-    <?php while($prestamo = $resultado->fetch_assoc()):?>
-      <div class="prestamo" id="<?php echo $prestamo['id']?>">
-        <div class="area"><?php echo $prestamo['area']?></div>
-        <div class="nombres"><?php echo $prestamo['nombres']?></div>
-        <div class="tipo"><?php echo $prestamo['tipo']?></div>
-        <div class="fecha"><?php echo $prestamo['fecha_ingreso']?></div>
-        <div class="fechaSistema"><?php echo $prestamo['fecha']?></div>
-      </div>
-    <?php endwhile ;?>
-  </div>
-
-  <div class="prestamos">
-    <div class="titulo">Cronograma</div>
-    <div class="cabecera">
-      <span>mantenimiento_asignado</span>
-      <span>nombres</span>
-      <span>area</span>
-      
-      <span>fecha sistema</span>
-    </div>
-    <?php while($cronograma = $resultado->fetch_assoc()):?>
-      <div class="cronograma" id="<?php echo $cronograma['id']?>">
-        <div class="mantenimiento_asignado"><?php echo $cronograma['mantenimiento_asignado']?></div>
-        <div class="nombre"><?php echo $cronograma['nombre']?></div>
-        <div class="area"><?php echo $cronograma['area']?></div>
-        <div class="fecha"><?php echo $cronograma['fecha_ingreso']?></div>
-        <div class="fechaSistema"><?php echo $cronograma['fecha']?></div>
-      </div>
-    <?php endwhile ;?>
-  </div>-->
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
 <script  src="./js/basedatos.js"></script>

@@ -59,32 +59,32 @@ body {
     grid-template-columns: repeat(5, 1fr);
     margin-bottom: 5px;
   }
-  .inventario {
+  ..inventario {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     margin-top: 20px;
   }
+  
   .inventario div {
-    border: 1px solid black;
+    border: 1px solid #333; /* Cambia el tono del borde según tus preferencias */
     padding: 10px;
     text-align: center;
+    background-color: #f8f8f8; /* Cambia el tono de fondo según tus preferencias */
+    margin-bottom: 10px; /* Ajusta el margen inferior según tus preferencias */
   }
+  
+  .titulo1, .titulo2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
   .inventario {
     width: 70%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    margin-bottom: 5px;
   }
-  .titulo1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  .titulo2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+  
   

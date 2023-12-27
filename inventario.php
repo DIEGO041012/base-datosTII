@@ -62,41 +62,52 @@ conectarBD();
   
   <br>
   <div class="flex justify-center">
-    <form id="miFormulario" class="w-full max-w-lg">
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-dependencia">
-            Tipo
-          </label>
-          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-dependencia" type="text" name = "tipo" placeholder="Dependencia">
-        </div>
+  <form id="miFormulario" class="w-full max-w-lg">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-dependencia">
+          Tipo
+        </label>
+        <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-dependencia" name="tipo">
+          <option value="teclado">Teclado</option>
+          <option value="mause">Mouse</option>
+          <option value="pantalla">Pantalla</option>
+          <option value="base">Base</option>
+          <option value="usb_wifi">USB WiFi</option>
+          <option value="usb_ethernet">USB Ethernet</option>
+          <option value="usb_vga">USB VGA</option>
+          <option value="multipuerto">Multipuerto</option>
+          <option value="disco_solido">Disco Sólido</option>
+        </select>
       </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"  for="grid-prioridad">
-            Cantidad
-          </label>
-          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-prioridad" type="text" name = "cantidad" placeholder="Prioridad">
-        </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-prioridad">
+          Cantidad
+        </label>
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-prioridad" type="number" name="cantidad" placeholder="Prioridad">
       </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"  for="grid-fecha-tentativa">
-            Fecha Ingreso
-          </label>
-          <input name="fecha" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-fecha-tentativa" type="date" placeholder="Fecha Tentativa">
-          <input type="hidden" name="formSubmitted" value="1">
-        </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-fecha-tentativa">
+          Fecha Ingreso
+        </label>
+        <input name="fecha" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-fecha-tentativa" type="date" placeholder="Fecha Tentativa">
+        <input type="hidden" name="formSubmitted" value="1">
       </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <button id="guardar"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">
-            Guardar
-          </button>
-        </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <button id="guardar" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">
+          Guardar
+        </button>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
+</div>
+
   
   <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js'></script>
