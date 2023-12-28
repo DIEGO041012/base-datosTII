@@ -5,7 +5,7 @@ include('base1conexion.php');
 $conexion = conectarBD();
 
   if($conexion){
-    $sql = "SELECT * FROM inventario";
+    $sql = "SELECT tipo, sum(cantidad) as suma FROM base_de_datos_ti.inventario group by tipo;";
     
     
 
@@ -57,7 +57,7 @@ $conexion = conectarBD();
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./existencias.php">existencias</a>
+          <a class="nav-link text-white" href="./inventario.php">inventario</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -70,18 +70,16 @@ $conexion = conectarBD();
 
 
 <div class="prestamos">
-    <div class="titulo2">inventario</div>
-    <div class="cabecera1">
+    <div class="titulo4">inventario</div>
+    <div class="cabecera4">
       <span>tipo</span>
-      <span>cantidad</span>
-      <span>fecha ingreso</span>
+      <span>Suma</span>      
       
     </div>
     <?php while($inventario = $resultado->fetch_assoc()):?>
-      <div class="inventario" id="<?php echo $inventario['id']?>">
+      <div class="existencias" >
         <div class="tipo"><?php echo $inventario['tipo']?></div>
-        <div class="cantidad"><?php echo $inventario['cantidad']?></div>
-        <div class="fecha"><?php echo $inventario['fecha']?></div>
+        <div class="cantidad"><?php echo $inventario['suma']?></div>        
       </div>
     <?php endwhile ;?>
   </div>
