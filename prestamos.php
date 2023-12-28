@@ -65,7 +65,43 @@
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-dependencia">
            Area de asignacion
           </label>
-          <input name="asignacion" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-dependencia" type="text" placeholder="Dependencia">
+          <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-dependencia" name="asignacion">
+                    <option>Calidad</option>
+                    <option>Gestion Humana</option>
+                    <option>CDN</option>
+                    <option>Contabilidad</option>
+                    <option>Larga vida</option>
+                    <option>Ventas</option>
+                    <option>Comercio exterior</option>
+                    <option>Call center</option>
+                    <option>Cartera</option>
+                    <option>Presedencia</option>
+                    <option>Laboratorio</option>
+                    <option>Produccion</option>
+                    <option>TI</option>
+                    <option>Compras</option>
+                    <option>Area Tecnica</option>
+                    <option>Mantenimiento</option>
+                    <option>Oficina almacen</option>
+                    <option>Logistica</option>
+                    <option>Planeacion de la demanda</option>
+                    <option>Seleccion</option>
+                    <option>Agencia medellin</option>
+                    <option>Proyectos riesgos</option>
+                    <option>Charcuteria</option>
+                    <option>Porteria</option>
+                    <option>Resepcion</option>
+                    <option>Tesoreria</option>
+                    <option>Empaquez</option>
+                    <option>Cava AG medellin</option>
+                    <option>Carniceria</option>
+                    <option>Combos</option>
+                    <option>Todo en uno (empaques)</option>
+                    <option>Hornos</option>
+                    <option>Primavera</option>
+                    <option>Frio DAN</option>
+                  </select> 
+          
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -77,13 +113,30 @@
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-prioridad">
-            Tipo
-          </label>
-          <input name="tipo" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-prioridad" type="text" placeholder="Prioridad">
-        </div>
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-dependencia">
+          Tipo
+        </label>
+        <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-dependencia" name="tipo">
+          <option value="Teclado">Teclado</option>
+          <option value="Teclado_numerico">Teclado numerico</option>
+          <option value="Mause">Mouse</option>
+          <option value="Pantalla">Pantalla</option>
+          <option value="Base">Base</option>
+          <option value="Usb_wifi">USB/WiFi</option>
+          <option value="Usb_ethernet">USB Ethernet</option>
+          <option value="Usb_vga">USB/VGA</option>
+          <option value="Multipuerto">Multipuerto</option>
+          <option value="SSD_240gb">Disco Sólido 240GB</option>
+          <option value="SSD_480gb">Disco Solodo 480GB</option>
+          <option value="M.2_500GB">M2 500GB</option>
+          <option value="M.2_256">M2 256GB</option>
+          <option value="Cable_hdmi">Cable hdmi</option>
+          <option value="Cable_hdmi_vga">Cable hdmi/vga</option>
+          <option value="Cable_vga">Cable vga</option>
+        </select>
       </div>
+    </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-fecha-tentativa">

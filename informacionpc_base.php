@@ -37,27 +37,27 @@ $conexion = conectarBD();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">informacion pc</a>
+          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">Informacion pc</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./cronogramadatos.php">cronograma</a>
+          <a class="nav-link text-white" href="./cronogramadatos.php">Cronograma</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./prestamosbase.php">prestamos</a>
+          <a class="nav-link text-white" href="./prestamosbase.php">Prestamos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            informes
+            Informes
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-black" href="./informes/inventario">inventario</a></li>
-            <li><a class="dropdown-item text-black" href="./informes/informes_prestamos.php">prestamos</a></li>
+            <li><a class="dropdown-item text-black" href="./informes/inventario">Inventario</a></li>
+            <li><a class="dropdown-item text-black" href="./informes/informes_prestamos.php">Prestamos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-black" href="">informe general</a></li>
+            <li><a class="dropdown-item text-black" href="">Informe general</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./inventariobase.php">inventario</a>
+          <a class="nav-link text-white" href="./inventariobase.php">Inventario</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -68,19 +68,19 @@ $conexion = conectarBD();
   </div>
 </nav>
 
-<div class="titulo1">informacion PC</div>
+<div class="titulo1">Informacion PC</div>
 <div class="container_tabla">
 <div class="cabecera">
-  <span>encargado</span>
-  <span>marca</span>
-  <span>modelo</span>
-  <span>disco_duro</span>
+  <span>Encargado</span>
+  <span>Marca</span>
+  <span>Modelo</span>
+  <span>Disco_duro</span>
   <span>RAM</span>
-  <span>procesador</span>
-  <span>nombre_pc</span>
-  <span>conexion</span>
-  <span>activo_fijo</span>
-  <span>mac</span>
+  <span>Procesador</span>
+  <span>Nombre_pc</span>
+  <span>Conexion</span>
+  <span>Activo_fijo</span>
+  <span>Mac</span>
   <!--<span>sistema_operativo</span>
   <span>serie</span>
   <span>velocidad</span>

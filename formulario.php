@@ -20,43 +20,48 @@
     <link rel="stylesheet" href="./principal.css">
     
     
-    <title>Formulario - Hoja de vida del computador</title>
+    <title>Informacion del computador</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-custom navbar-mainbg">
-      <a class="navbar-brand navbar-logo" href="./ingreso.php">Comestibles Dan</a>
-      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fas fa-bars text-white"></i>
-      </button>
-      <div class="collapse navbar-collapse" id=".0navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-              <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-              <li class="nav-item">
-                  <a class="nav-link" href="./formulario.php"><i class="fas fa-tachometer-alt"></i>Informacion PC</a>
-              </li>
-              <li class="nav-item active">
-                  <a class="nav-link" href="./cronogramas.php"><i class="far fa-address-book"></i>Cronograma</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="far fa-clone"></i>Base datos TI</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="./prestamos.php"><i class="far fa-chart-bar"></i>Prestamos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="./inventario.php"><i class="far fa-copy"></i>Inventario</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="./informes.php"><i class="far fa-chart-bar"></i>Informe</a>
-              </li>
-          </ul>
-      </div>
-  </nav>
+<nav class="navbar navbar-expand-lg bg-danger">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="./ingreso.php">Comestibles Dan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">Informacion pc</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./cronogramas.php">cronograma</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./base_datos.php">Base datos TI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/prestamos.php">Prestamos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./inventario.php">Inventario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./informes.php">Informes</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
   <section class="container mt-4 text-center">
   <img src="./img/logo_dan-removebg-preview.png" alt=""class="img-fluid" style="max-width: 200px;">
-  <h1>Hoja de vida del computador</h1>
+  <h1>Informacion del computador</h1>
   <br><br>
   </section>
   <form id='miFormulario' class="row g-3 needs-validation">

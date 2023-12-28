@@ -25,7 +25,7 @@ $conexion = conectarBD();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./basedatos.css">
-    <title>prestamosbase</title>
+    <title>Prestamosbase</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-danger">
@@ -37,27 +37,27 @@ $conexion = conectarBD();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">informacion pc</a>
+          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">Informacion pc</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./cronogramadatos.php">cronograma</a>
+          <a class="nav-link text-white" href="./cronogramadatos.php">Cronograma</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./prestamosbase.php">prestamos</a>
+          <a class="nav-link text-white" href="./prestamosbase.php">Prestamos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             informes
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-black" href="./informes/inventario">inventario</a></li>
-            <li><a class="dropdown-item text-black" href="./informes/informes_prestamos.php">prestamos</a></li>
+            <li><a class="dropdown-item text-black" href="./informes/inventario">Inventario</a></li>
+            <li><a class="dropdown-item text-black" href="./informes/informes_prestamos.php">Prestamos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-black" href="">informe general</a></li>
+            <li><a class="dropdown-item text-black" href="">Informe general</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./existencias.php">existencias</a>
+          <a class="nav-link text-white" href="./existencias.php">Existencias</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -70,7 +70,7 @@ $conexion = conectarBD();
 
 
 <div class="prestamos">
-    <div class="titulo2">inventario</div>
+    <div class="titulo2">Inventario</div>
     <div class="cabecera1">
       <span>tipo</span>
       <span>cantidad</span>

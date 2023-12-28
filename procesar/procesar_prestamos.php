@@ -12,8 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['formSubmitted'])) {
     // Puedes obtener los otros campos de la misma manera
 
     // Por ejemplo, solo imprimo los datos por ahora:
+    echo "asignacion: " . $area_asignada . "<br>";
+    echo "nombres: " . $nombre_apellido . "<br>";
     echo "tipo: " . $tipo . "<br>";
-    echo "cantidad: " . $cantidad . "<br>";
     echo "fecha: " . $fecha . "<br>";
     // Puedes imprimir los otros campos de la misma manera.
 

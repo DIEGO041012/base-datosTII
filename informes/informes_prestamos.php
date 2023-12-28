@@ -1,7 +1,7 @@
 <html>
   <head>
     <div class="sm:text-center text-5xl">
-      <h1>Presrtamos</h1>
+      <h1>Prestamos</h1>
     </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="./principal.css">

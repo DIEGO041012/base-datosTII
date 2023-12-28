@@ -55,7 +55,7 @@ conectarBD();
         <img src="./img/logo_dan-removebg-preview.png" alt="logo" class="mx-auto h-54 w-64" >
     </div>
   <h1 class="sm:text-center text-5xl">
-    inventario bodega
+    Inventario bodega
   </h1>
   <br><br>
   
@@ -69,16 +69,22 @@ conectarBD();
           Tipo
         </label>
         <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-dependencia" name="tipo">
-          <option value="teclado">Teclado</option>
-          <option value="mause">Mouse</option>
-          <option value="pantalla">Pantalla</option>
-          <option value="base">Base</option>
-          <option value="usb_wifi">USB WiFi</option>
-          <option value="usb_ethernet">USB Ethernet</option>
-          <option value="usb_vga">USB VGA</option>
-          <option value="multipuerto">Multipuerto</option>
-          <option value="disco_solido">Disco Sólido</option>
-          <option value="cable_hdmi">Cable hdmi</option>
+          <option value="Teclado">Teclado</option>
+          <option value="Teclado_numerico">Teclado numerico</option>
+          <option value="Mause">Mouse</option>
+          <option value="Pantalla">Pantalla</option>
+          <option value="Base">Base</option>
+          <option value="Usb_wifi">USB/WiFi</option>
+          <option value="Usb_ethernet">USB Ethernet</option>
+          <option value="Usb_vga">USB/VGA</option>
+          <option value="Multipuerto">Multipuerto</option>
+          <option value="SSD_240gb">Disco Sólido 240GB</option>
+          <option value="SSD_480gb">Disco Solodo 480GB</option>
+          <option value="M.2_500GB">M2 500GB</option>
+          <option value="M.2_256">M2 256GB</option>
+          <option value="Cable_hdmi">Cable hdmi</option>
+          <option value="Cable_hdmi_vga">Cable hdmi/vga</option>
+          <option value="Cable_vga">Cable vga</option>
         </select>
       </div>
     </div>

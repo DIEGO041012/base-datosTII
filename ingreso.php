@@ -6,57 +6,59 @@ $conexion = conectarBD();
 
 ?>
 
+</body>
+</html>
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>comestiblesDan</title>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css'>
-
-<link rel="stylesheet" href="./principal.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./principal.css">
+    <title>Document</title>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="./index.php">Comestibles Dan</a>
-        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars text-white"></i>
-        </button>
-        <div class="collapse navbar-collapse" id=".0navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./formulario.php"><i class="fas fa-tachometer-alt"></i>Informacion PC</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./cronogramas.php"><i class="far fa-address-book"></i>Cronograma</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./base_datos.php"><i class="far fa-clone"></i>Base datos TI</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./prestamos.php"><i class="far fa-chart-bar"></i>Prestamos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./inventario.php"><i class="far fa-copy"></i>Inventario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./informes.php"><i class="far fa-chart-bar"></i>Informe</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <section class="logopp">
+<nav class="navbar navbar-expand-lg bg-danger">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="./ingreso.php">Comestibles Dan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="./formulario.php">Informacion pc</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./cronogramas.php">Cronograma</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./base_datos.php">Base datos TI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/prestamos.php">Prestamos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./inventario.php">Inventario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./informes.php">Informes</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<section class="logopp">
         <img src="./img/logo_dan-removebg-preview.png" alt="logopp">
     </section>
-<!-- partial -->
-  <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js'></script>
-<script  src="./js/principal.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+<script  src="./js/principal.js"></script>
 </body>
 </html>
