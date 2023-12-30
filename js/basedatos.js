@@ -1,6 +1,4 @@
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     $('#search-form').submit(function(event) {
         event.preventDefault();
@@ -12,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
             searchInDatabase(searchTerm);
         }
     });
+
+    clickonDelete();
 });
 
 function searchInDatabase(searchTerm) {
@@ -29,5 +29,33 @@ function searchInDatabase(searchTerm) {
             // Manejar errores aquí
             console.error('Error:', error);
         }
+    });
+}
+
+function clickonDelete(){
+    existencias = document.querySelectorAll(".existencias");
+
+    existencias.forEach(existencia =>{
+        existencia.addEventListener('click', event =>{
+            console.log(existencia.id);
+            fetch('../eliminar.php',{
+                method : 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'elementoID=' + encodeURIComponent(existencia.id)
+            })
+            .then(response =>{
+                if(response.ok){
+                    return response.text();
+                }else{
+                    throw new Error(JSON.stringify({ status: response.status, message: response.statusText }));
+                }
+            })
+            .then(data =>{
+                alert('elemento eliminado correctamente');
+            })
+            
+        });
     });
 }

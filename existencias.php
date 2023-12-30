@@ -6,12 +6,10 @@ $conexion = conectarBD();
 
   if($conexion){
     $sql = "SELECT tipo, sum(cantidad) as suma FROM base_de_datos_ti.inventario group by tipo;";
-    
-    
-
     $resultado = $conexion->query($sql);
     
-    
+
+
   }
   
 
@@ -25,6 +23,7 @@ $conexion = conectarBD();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./basedatos.css">
+
     <title>prestamosbase</title>
 </head>
 <body>
@@ -73,19 +72,28 @@ $conexion = conectarBD();
     <div class="titulo4">inventario</div>
     <div class="cabecera4">
       <span>tipo</span>
-      <span>Suma</span>      
-      
+      <span>Suma</span>
+      <span></span>      
     </div>
     <?php while($inventario = $resultado->fetch_assoc()):?>
-      <div class="existencias" >
+      <div id="<?php echo $inventario['tipo']?>" class="existencias" >
         <div class="tipo"><?php echo $inventario['tipo']?></div>
-        <div class="cantidad"><?php echo $inventario['suma']?></div>        
+        <div class="cantidad"><?php echo $inventario['suma']?></div> 
+        <div class="opciones">
+          <lord-icon
+              class="icon"
+              src="https://cdn.lordicon.com/skkahier.json"
+              trigger="hover"
+              style="width:25px;height:25px">
+          </lord-icon>
+        </div>       
       </div>
     <?php endwhile ;?>
   </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
 <script  src="./js/basedatos.js"></script>
 </body>
 </html>

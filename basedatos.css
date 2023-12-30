@@ -122,8 +122,8 @@ body {
 
   .cabecera4 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 30%;
+    grid-template-columns: repeat(3, 1fr);
+    width: 50%;
     margin-bottom: -3px;
   }
 
@@ -132,11 +132,14 @@ body {
     padding: 10px;
     text-align: center;
   }
+  .icon:hover{
+    cursor: pointer;
+  }
 
-  .existencias {
-    width: 30%;
+  .existencias{
+    width: 50%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin-bottom: -8px;
     gap: 5px; /* Ajusta el espacio entre las celdas según tu preferencia */
 }
