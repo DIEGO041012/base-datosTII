@@ -76,15 +76,20 @@ conectarBD();
           <option value="Base">Base</option>
           <option value="Usb_wifi">USB/WiFi</option>
           <option value="Usb_ethernet">USB Ethernet</option>
-          <option value="Usb_vga">USB/VGA</option>
+          <option value="Memorias_RAM_2gb">memorias RAM 2GB</option>
+          <option value="memorias_RAM_4gb">memorias RAM 4GB</option>
+          <option value="memorias_RAM_8gb">memorias RAM 8GB</option>
           <option value="Multipuerto">Multipuerto</option>
           <option value="SSD_240gb">Disco Sólido 240GB</option>
           <option value="SSD_480gb">Disco Solodo 480GB</option>
-          <option value="M.2_500GB">M2 500GB</option>
-          <option value="M.2_256">M2 256GB</option>
-          <option value="Cable_hdmi">Cable hdmi</option>
-          <option value="Cable_hdmi_vga">Cable hdmi/vga</option>
-          <option value="Cable_vga">Cable vga</option>
+          <option value="M.2_480GB">M2 480GB</option>
+          <option value="M.2_240">M2 240GB</option>
+          <option value="Cable_hdmi">hdmi</option>
+          <option value="Cable_hdmi_vga">hdmi/VGA</option>
+          <option value="Cable_vga">Cable VGA</option>
+          <option value="Cable_hdmi">Cable HDMI</option>
+          <option value="Cable_sata">Cable SATA</option>
+
         </select>
       </div>
     </div>

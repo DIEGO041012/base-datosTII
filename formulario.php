@@ -220,6 +220,7 @@
                     <option>Hornos</option>
                     <option>Primavera</option>
                     <option>Frio DAN</option>
+                    <option>MPNC</option>
                   </select>                  
                   <div class="invalid-feedback">                   
                   </div>
