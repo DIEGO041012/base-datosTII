@@ -44,6 +44,9 @@ $conexion = conectarBD();
         <li class="nav-item">
           <a class="nav-link text-white" href="./informes.php">Informes</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./usuarioequipo.php">Usuario equipo</a>
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
