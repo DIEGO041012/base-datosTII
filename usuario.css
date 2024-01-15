@@ -1,39 +1,32 @@
-.usuario {
+.usuario1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 5px;
   }
-
+  .usuario1 div {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+  }
+ 
   .titulo {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
-  }
+    margin: 10px auto; /* Auto en el margen horizontal centra el elemento */
+    text-align: center;
+}
 
   .cabecera {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    width: 70%;
-    margin-bottom: 10px;
-  }
-
-  .cabecera span {
-    background-color: rgb(250, 83, 83);
-    padding: 10px;
+    width: 80%;
+    margin-bottom: 5px;
     text-align: center;
   }
-
-  .usuario {
-    width: 70%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    margin-bottom: 5px;
-  }
-
-  .usuario div {
-    border: 1px solid black;
-    padding: 10px;
+  .cabecera span {
+    background-color: rgb(250, 83, 83);
+    padding: 5px;
     text-align: center;
   }

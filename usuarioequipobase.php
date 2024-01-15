@@ -72,7 +72,7 @@ $conexion = conectarBD();
 </nav>
 
 
-<div class="usuario">
+<div class="usuario1">
     <div class="titulo">Usuario del equipo</div>
     <div class="cabecera">
       <span>Area</span>
