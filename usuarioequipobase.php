@@ -23,8 +23,8 @@ $conexion = conectarBD();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./basedatos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">   
+    <link rel="stylesheet" href="./usuario.css">
     <title>usuarioequipobase</title>
 </head>
 <body>
@@ -72,11 +72,12 @@ $conexion = conectarBD();
 </nav>
 
 
-<div class="prestamos">
-    <div class="titulo">Prestamos</div>
+<div class="usuario">
+    <div class="titulo">Usuario del equipo</div>
     <div class="cabecera">
       <span>Area</span>
-      <span>Usuario</span>
+      <span>Nombre</span>
+      <span>Contraseña</span>
       <span>Articulo</span>
       <span>Fecha ingreso</span>
       <span>Fecha sistema</span>
@@ -84,7 +85,8 @@ $conexion = conectarBD();
     <?php while($usuario_equipo = $resultado->fetch_assoc()):?>
       <div class="usuario_equipo" id="<?php echo $usuario_equipo['id']?>">
         <div class="area"><?php echo $usuario_equipo['area']?></div>
-        <div class="usuario"><?php echo $usuario_equipo['usuario']?></div>
+        <div class="nombre"><?php echo $usuario_equipo['nombre']?></div>
+        <div class="contraseña"><?php echo $usuario_equipo['contraseña']?></div>
         <div class="articulo"><?php echo $usuario_equipo['articulo']?></div>
         <div class="fecha"><?php echo $usuario_equipo['fecha_ingreso']?></div>
         <div class="fechaSistema"><?php echo $usuario_equipo['fecha']?></div>
