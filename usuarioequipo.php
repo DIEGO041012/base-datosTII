@@ -101,6 +101,7 @@
                     <option>Hornos</option>
                     <option>Primavera</option>
                     <option>Frio DAN</option>
+                    <option>Almacen MPNC</option>
                   </select> 
           
         </div>
