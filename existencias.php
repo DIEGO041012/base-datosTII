@@ -73,7 +73,7 @@ $conexion = conectarBD();
     <div class="cabecera4">
       <span>tipo</span>
       <span>Suma</span>
-      <span></span>      
+      <span>Eliminar</span>      
     </div>
     <?php while($inventario = $resultado->fetch_assoc()):?>
       <div id="<?php echo $inventario['tipo']?>" class="existencias" >

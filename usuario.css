@@ -1,32 +1,43 @@
 .usuario1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 5px;
-  }
-  .usuario1 div {
-    border: 1px solid black;
-    padding: 5px;
-    text-align: center;
-  }
- 
-  .titulo {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 10px auto; /* Auto en el margen horizontal centra el elemento */
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
 }
 
-  .cabecera {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    width: 80%;
-    margin-bottom: 5px;
-    text-align: center;
-  }
-  .cabecera span {
-    background-color: rgb(250, 83, 83);
-    padding: 5px;
-    text-align: center;
-  }
+.usuario1 .usuario_equipo {
+  display: flex;
+  justify-content: space-between; /* Añadido: Espaciado entre los elementos */
+  width: 80%; /* Añadido: Limita el ancho de los elementos */
+  margin: 0 auto; /* Añadido: Centra la fila */
+  margin-bottom: 5px;
+}
+
+.usuario1 div {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  flex: 1;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.cabecera {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+.cabecera span {
+  background-color: rgb(250, 83, 83);
+  padding: 5px;
+  text-align: center;
+}
+
