@@ -23,6 +23,7 @@ $conexion = conectarBD();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./basedatos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>prestamosbase</title>
 </head>
@@ -95,5 +96,6 @@ $conexion = conectarBD();
 <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
 <script src="https://cdn.lordicon.com/lordicon.js"></script>
 <script  src="./js/basedatos.js"></script>
+<script  src="./js/existencias.js"></script>
 </body>
 </html>

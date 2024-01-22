@@ -18,6 +18,8 @@
    <link rel="stylesheet" href="./principal.css">
    <link rel="stylesheet" href="./usuario.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>usuarios</title>
 </head>
 <body>
