@@ -6,71 +6,71 @@
    <link rel="stylesheet" href="./principal.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart', 'bar']});
-      google.charts.setOnLoadCallback(drawStuff);
+       google.charts.load('current', {'packages':['corechart', 'bar']});
+  google.charts.setOnLoadCallback(drawStuff);
 
-      function drawStuff() {
+  function drawStuff() {
 
-        var button = document.getElementById('change-chart');
-        var chartDiv = document.getElementById('chart_div');
+    var button = document.getElementById('change-chart');
+    var chartDiv = document.getElementById('chart_div');
 
-        var data = google.visualization.arrayToDataTable([
-          ['Galaxy', 'Distance', 'Brightness'],
-          ['Canis Major Dwarf', 8000, 23.3],
-          ['Sagittarius Dwarf', 24000, 4.5],
-          ['Ursa Major II Dwarf', 30000, 14.3],
-          ['Lg. Magellanic Cloud', 50000, 0.9],
-          ['Bootes I', 60000, 13.1]
-        ]);
+    var data = google.visualization.arrayToDataTable([
+      ['Galaxy', 'Distance', 'Brightness'],
+      ['Canis Major Dwarf', 8000, 23.3],
+      ['Sagittarius Dwarf', 24000, 4.5],
+      ['Ursa Major II Dwarf', 30000, 14.3],
+      ['Lg. Magellanic Cloud', 50000, 0.9],
+      ['Bootes I', 60000, 13.1]
+    ]);
 
-        var materialOptions = {
-          width: 900,
-          chart: {
-            title: 'Nearby galaxies',
-            subtitle: 'distance on the left, brightness on the right'
-          },
-          series: {
-            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
-            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
-          },
-          axes: {
-            y: {
-              distance: {label: 'parsecs'}, // Left y-axis.
-              brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
-            }
-          }
-        };
-
-        var classicOptions = {
-          width: 900,
-          series: {
-            0: {targetAxisIndex: 0},
-            1: {targetAxisIndex: 1}
-          },
-          title: 'Nearby galaxies - distance on the left, brightness on the right',
-          vAxes: {
-            // Adds titles to each axis.
-            0: {title: 'parsecs'},
-            1: {title: 'apparent magnitude'}
-          }
-        };
-
-        function drawMaterialChart() {
-          var materialChart = new google.charts.Bar(chartDiv);
-          materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-          button.innerText = 'Change to Classic';
-          button.onclick = drawClassicChart;
+    var materialOptions = {
+      width: 900,
+      chart: {
+        title: 'Galaxias cercanas',
+        subtitle: 'distancia a la izquierda, brillo a la derecha'
+      },
+      series: {
+        0: { axis: 'distance' }, // Vincula la serie 0 a un eje llamado 'distance'.
+        1: { axis: 'brightness' } // Vincula la serie 1 a un eje llamado 'brightness'.
+      },
+      axes: {
+        y: {
+          distance: {label: 'pársecs'}, // Eje y izquierdo.
+          brightness: {side: 'right', label: 'magnitud aparente'} // Eje y derecho.
         }
-
-        function drawClassicChart() {
-          var classicChart = new google.visualization.ColumnChart(chartDiv);
-          classicChart.draw(data, classicOptions);
-          button.innerText = 'Change to Material';
-          button.onclick = drawMaterialChart;
-        }
-
-        drawMaterialChart();
+      }
     };
+
+    var classicOptions = {
+      width: 900,
+      series: {
+        0: {targetAxisIndex: 0},
+        1: {targetAxisIndex: 1}
+      },
+      title: 'Galaxias cercanas - distancia a la izquierda, brillo a la derecha',
+      vAxes: {
+        // Agrega títulos a cada eje.
+        0: {title: 'pársecs'},
+        1: {title: 'magnitud aparente'}
+      }
+    };
+
+    function drawMaterialChart() {
+      var materialChart = new google.charts.Bar(chartDiv);
+      materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+      button.innerText = 'Cambiar a Clásico';
+      button.onclick = drawClassicChart;
+    }
+
+    function drawClassicChart() {
+      var classicChart = new google.visualization.ColumnChart(chartDiv);
+      classicChart.draw(data, classicOptions);
+      button.innerText = 'Cambiar a Material';
+      button.onclick = drawMaterialChart;
+    }
+
+    drawMaterialChart();
+  };
     </script>
   </head>
   <body>
