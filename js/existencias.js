@@ -15,7 +15,7 @@ function clickOnbuttons() {
             console.log(clave + ": " + valor);
         });
         
-        fetch('./procesar/procesar_eli.php', {
+        fetch('./procesar/procesar_inventario.php', {
             method: 'POST',
             body: formData,
         })
