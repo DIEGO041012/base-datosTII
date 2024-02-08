@@ -85,7 +85,6 @@ conectarBD();
           <option value="SSD_480gb">Disco Solodo 480GB</option>
           <option value="M.2_480GB">M2 480GB</option>
           <option value="M.2_240">M2 240GB</option>
-          <option value="Cable_hdmi">hdmi</option>
           <option value="Cable_hdmi_vga">hdmi/VGA</option>
           <option value="Cable_vga">Cable VGA</option>
           <option value="Cable_hdmi">Cable HDMI</option>
