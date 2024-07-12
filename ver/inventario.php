@@ -16,45 +16,15 @@ conectarBD();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css'>
-<link rel="stylesheet" href="./principal.css">
+<link rel="stylesheet" href="../public/img/css/principal.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Inventario</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="./ingreso.php">Comestibles Dan</a>
-        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars text-white"></i>
-        </button>
-        <div class="collapse navbar-collapse" id=".0navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./formulario.php"><i class="fas fa-tachometer-alt"></i>Informacion PC</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./cronogramas.php"><i class="far fa-address-book"></i>Cronograma</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-clone"></i>Base datos TI</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./prestamos.php"><i class="far fa-chart-bar"></i>Prestamos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./inventario.php"><i class="far fa-copy"></i>Inventario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./informes.php"><i class="far fa-chart-bar"></i>Informe</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
-    <div class="">
-        <img src="./img/logo_dan-removebg-preview.png" alt="logo" class="mx-auto h-54 w-64" >
-    </div>
+<?php include 'heard.html'; ?> 
+<br><br>
   <h1 class="sm:text-center text-5xl">
     Inventario bodega
   </h1>

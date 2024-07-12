@@ -31,7 +31,7 @@
         // echo '</pre>';
 
         if($password === $row['pasword']){
-            header('Location: ./ingreso.php');
+            header('Location: ../ver/ingreso.php');
         }else{
           $errores[] = "contraseña incorrecta";
         }
