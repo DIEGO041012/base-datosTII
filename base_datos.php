@@ -5,7 +5,7 @@ include('base1conexion.php');
 $conexion = conectarBD();
 
   if($conexion){
-    $sql = "SELECT * FROM prestamos";
+    $sql = "SELECT * FROM formularios_prestamos";
     
     
 

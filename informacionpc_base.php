@@ -5,7 +5,7 @@ include('base1conexion.php');
 $conexion = conectarBD();
 
   if($conexion){
-    $sql = "SELECT * FROM informacion_pc";
+    $sql = "SELECT * FROM formulario_informacionpc";
     
     
 

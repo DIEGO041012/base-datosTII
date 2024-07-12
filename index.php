@@ -16,7 +16,7 @@
     }
 
     if(empty($errores)){
-      $sql = "SELECT * FROM ingreso WHERE email ='{$user}'";
+      $sql = "SELECT * FROM usuario WHERE correo ='{$user}'";
 
       $resultado = $conexion->query($sql);
       // var_dump($resultado);
@@ -30,7 +30,7 @@
         // var_dump($row['contraseña']);
         // echo '</pre>';
 
-        if($password === $row['contraseña']){
+        if($password === $row['pasword']){
             header('Location: ./ingreso.php');
         }else{
           $errores[] = "contraseña incorrecta";
