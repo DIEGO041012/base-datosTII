@@ -168,237 +168,133 @@
         </div>
       </div>
     </div>
-    <div class="col-md-12">
+   <!-- <div class="col-md-12">
       <div class="tile">
         <div class="ratio ratio-16x9">
-        <!--<h3 class="tile-title">Estadística de ausencias</h3>-->
-          <div id="chartEmpleados" style="width: 100%; height: 100%;"></div>
+        <h3 class="tile-title">Estadística de ausencias</h3>-->
+         <!-- <div id="chartEmpleados" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 </main>
     <!-- Essential javascripts for application to work-->
     <!-- aca va la logica de las graficas-->
     
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-    <script type="text/javascript">
-      
-      fetch('get_data.php')
-      .then(response => response.json())
-      .then(data => {
-        // Gráfica de Órdenes
-        var xAxisDataOrdenes = data.ordenes.map(item => item.fecha);
-        var seriesDataOrdenes = data.ordenes.map(item => item.cantidad);
-        var option1 = {
-          toolbox: {
-                        top: '10%', right: '5%',
-                        feature: {
-                            magicType: { show: true, type: ['line', 'bar'] },
-                            restore: { show: true },
-                            saveAsImage: { show: true }
-                        }
-                    },
-                    
-          title: { text: 'Órdenes por Fecha' },
-          tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-          xAxis: { type: 'category', data: xAxisDataOrdenes },
-          yAxis: { type: 'value' },
-          series: [{ name: 'Cantidad', type: 'bar', data: seriesDataOrdenes }]
-        };
-        var chart1 = echarts.init(document.getElementById('chart1'));
-        chart1.setOption(option1);
+<script type="text/javascript">
+  fetch('get_data.php')
+  .then(response => response.json())
+  .then(data => {
+    // Gráfica de Información de PCs
+    var xAxisDataInformacionpc = data.formulario_informacionpc.map(item => item.fechaSistema);
+    var seriesDataInformacionpc = data.formulario_informacionpc.map(item => item.modelo);
+    var option1 = {
+      toolbox: {
+        top: '10%', right: '5%',
+        feature: {
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      title: { text: 'Información de PCs' },
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+      xAxis: { type: 'category', data: xAxisDataInformacionpc },
+      yAxis: { type: 'value' },
+      series: [{ name: 'Modelo', type: 'bar', data: seriesDataInformacionpc }]
+    };
+    var chart1 = echarts.init(document.getElementById('chart1'));
+    chart1.setOption(option1);
 
-        // Gráfica de Requisiciones
-        var xAxisDataRequisiciones = data.requisiciones.map(item => item.fechaSistema);
-        var seriesDataRequisiciones = data.requisiciones.map(item => item.cantidad);
-        var option2 = {
-          toolbox: {
-                        top: '10%', right: '5%',
-                        feature: {
-                            magicType: { show: true, type: ['line', 'bar'] },
-                            restore: { show: true },
-                            saveAsImage: { show: true }
-                        }
-                    },
-          title: { text: 'Requisiciones por Fecha' },
-          tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-          xAxis: { type: 'category', data: xAxisDataRequisiciones },
-          yAxis: { type: 'value' },
-          series: [{ name: 'Cantidad', type: 'bar', data: seriesDataRequisiciones }]
-        };
-        var chart2 = echarts.init(document.getElementById('chart2'));
-        chart2.setOption(option2);
+    // Gráfica de Existencias
+    var xAxisDataExistencias = data.formularios_existencias.map(item => item.fecha);
+    var seriesDataExistencias = data.formularios_existencias.map(item => item.cantidad);
+    var option2 = {
+      toolbox: {
+        top: '10%', right: '5%',
+        feature: {
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      title: { text: 'Existencias por Fecha' },
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+      xAxis: { type: 'category', data: xAxisDataExistencias },
+      yAxis: { type: 'value' },
+      series: [{ name: 'Cantidad', type: 'bar', data: seriesDataExistencias }]
+    };
+    var chart2 = echarts.init(document.getElementById('chart2'));
+    chart2.setOption(option2);
 
-        // Gráfica de Productos Totales (Gráfico de Pastel)
-        var seriesDataProductosTotales = data.productos_totales.map(item => ({ value: item.gran_total, name: 'OP ' + item.numero_op }));
-        var option3 = {
-          toolbox: {
-                        top: '10%', right: '5%',
-                        feature: {                           
-                            saveAsImage: { show: true }
-                        }
-                    },
-          title: { text: 'Productos totales' },
-          tooltip: { trigger: 'item' },
-          legend: { top: '5%', left: 'center' },
-          series: [
-            {
-              name: 'Productos Totales',
-              type: 'pie',
-              radius: ['35%', '70%'],
-              center: ['50%', '70%'],
-              startAngle: 180,
-              endAngle: 360,
-              data: seriesDataProductosTotales
-            }
-          ]
-        };
-        var chart3 = echarts.init(document.getElementById('chart3'));
-        chart3.setOption(option3);
+    // Gráfica de Inventario
+    var xAxisDataInventario = data.formularios_inventario.map(item => item.fecha_ingreso);
+    var seriesDataInventario = data.formularios_inventario.map(item => item.cantidad);
+    var option3 = {
+      toolbox: {
+        top: '10%', right: '5%',
+        feature: {
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      title: { text: 'Inventario por Fecha' },
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+      xAxis: { type: 'category', data: xAxisDataInventario },
+      yAxis: { type: 'value' },
+      series: [{ name: 'Cantidad', type: 'bar', data: seriesDataInventario }]
+    };
+    var chart3 = echarts.init(document.getElementById('chart3'));
+    chart3.setOption(option3);
 
-        // Gráfica de Productos
-        var xAxisDataProductos = data.productos.map(item => item.fechaSistema);
-        var seriesDataProductos = data.productos.map(item => item.valor_total_prod);
-        var option4 = {
-          toolbox: {
-                        top: '10%', right: '5%',
-                        feature: {
-                            magicType: { show: true, type: ['line', 'bar'] },
-                            restore: { show: true },
-                            saveAsImage: { show: true }
-                        }
-                    },
-          title: { text: 'Productos por Fecha' },
-          tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-          xAxis: { type: 'category', data: xAxisDataProductos },
-          yAxis: { type: 'value' },
-          series: [{ name: 'Valor Total', type: 'bar', data: seriesDataProductos }]
-        };
-        var chart4 = echarts.init(document.getElementById('chart4'));
-        chart4.setOption(option4);
+    // Gráfica de Préstamos
+    var xAxisDataPrestamos = data.formularios_prestamos.map(item => item.fechaSistema);
+    var seriesDataPrestamos = data.formularios_prestamos.map(item => item.articulo);
+    var option4 = {
+      toolbox: {
+        top: '10%', right: '5%',
+        feature: {
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      title: { text: 'Préstamos por Fecha' },
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+      xAxis: { type: 'category', data: xAxisDataPrestamos },
+      yAxis: { type: 'value' },
+      series: [{ name: 'Artículo', type: 'bar', data: seriesDataPrestamos }]
+    };
+    var chart4 = echarts.init(document.getElementById('chart4'));
+    chart4.setOption(option4);
 
-        var productosLineaBlanca = data.productos_linea_blanca.map(item => item.producto);
-        var productosLineaGris = data.productos_linea_gris.map(item => item.producto);
-        var codigoProductosLineaBlanca = data.productos_linea_blanca.map(item => item.codigo_producto);
-        var codigoProductosLineaGris = data.productos_linea_gris.map(item => item.codigo_producto);
-
-        var option5 = {
-          toolbox: {
-            top: '10%', 
-            right: '5%',
-            feature: {
-              magicType: { show: true, type: ['line', 'bar'] },
-              restore: { show: true },
-              saveAsImage: { show: true }
-            }
-          },
-          title: { text: '' },          
-          tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-          legend: { data: ['Línea Blanca', 'Línea Gris'] },
-          grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-          xAxis: [{ 
-            type: 'category', 
-            data: [...productosLineaBlanca, ...productosLineaGris],
-            axisLabel: {
-              interval: 0,
-              rotate: 45
-            }
-          }],
-          yAxis: [{ type: 'value' }],
-          series: [
-            { 
-              name: 'Línea Blanca', 
-              type: 'bar', 
-              emphasis: { focus: 'series' }, 
-              data: codigoProductosLineaBlanca 
-            },
-            { 
-              name: 'Línea Gris', 
-              type: 'bar', 
-              emphasis: { focus: 'series' }, 
-              data: codigoProductosLineaGris 
-            }
-          ]
-        };
-        
-        var chart5 = echarts.init(document.getElementById('chart5'));
-        chart5.setOption(option5);
-
-         // Nueva Gráfica de Activo Planta y Activo Obra
-         var dataActivoPlanta = data.activo_planta.length;
-                var dataActivoObra = data.activo_obra.length;
-                var option6 = {
-                  toolbox: {
-                        top: '10%', right: '5%',
-                        feature: {
-                            magicType: { show: true, type: ['line', 'bar'] },
-                            restore: { show: true },
-                            saveAsImage: { show: true }
-                        }
-                    },
-                    grid: {
-                        left: '10%', right: '10%', top: '10%', bottom: '10%'
-                    },
-                    tooltip: { trigger: 'item' },
-                    legend: { orient: 'vertical', left: 'left' },
-                    series: [{
-                        name: 'Activos',
-                        type: 'pie',
-                        radius: '50%',
-                        data: [
-                            { value: dataActivoPlanta, name: 'Activo Planta' },
-                            { value: dataActivoObra, name: 'Activo Obra' }
-                        ],
-                        emphasis: {
-                            itemStyle: {
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                        }
-                    }]
-                };
-
-                var chart6 = echarts.init(document.getElementById('chart6'));
-                chart6.setOption(option6);
-
-                // Gráfica de Empleados por Cargo (Gráfico de Pastel)
-                var xAxisDataEmpleados = data.empleados_por_cargo.map(item => item.Cargo);
-                var seriesDataEmpleados = data.empleados_por_cargo.map(item => item.total);
-
-                var optionEmpleados = {
-                  title: { text: 'Estadistica por cargo' },
-                  toolbox: {
-                        top: '10%', right: '5%',
-                        feature: {
-                            magicType: { show: true, type: ['line', 'bar'] },
-                            restore: { show: true },
-                            saveAsImage: { show: true }
-                        }
-                    },
-                  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-                  legend: { data: ['Empleados',] },
-                  grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-                  xAxis: [{ type: 'category', data: xAxisDataEmpleados }],
-                  yAxis: [{ type: 'value' }],
-                  series: [
-                    { 
-                      name: 'Empleados', 
-                      type: 'bar', 
-                      stack: 'total', 
-                      emphasis: { focus: 'series' }, 
-                      data: seriesDataEmpleados 
-                    }
-                  ]
-                };
-                
-                var chartEmpleados = echarts.init(document.getElementById('chartEmpleados'));
-                chartEmpleados.setOption(optionEmpleados);
-              })
-      .catch(error => console.error('Error al obtener los datos:', error));
+    // Gráfica de Usuarios
+    var xAxisDataUsuarios = data.formularios_usuarios.map(item => item.fecha);
+    var seriesDataUsuarios = data.formularios_usuarios.map(item => item.nombre_responsable);
+    var option5 = {
+      toolbox: {
+        top: '10%', right: '5%',
+        feature: {
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      title: { text: 'Usuarios por Fecha' },
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+      xAxis: { type: 'category', data: xAxisDataUsuarios },
+      yAxis: { type: 'value' },
+      series: [{ name: 'Nombre Responsable', type: 'bar', data: seriesDataUsuarios }]
+    };
+    var chart5 = echarts.init(document.getElementById('chart5'));
+    chart5.setOption(option5);
+  })
+  .catch(error => console.error('Error al obtener los datos:', error));
 </script>
+
 
     </script>
     <!-- Google analytics script-->

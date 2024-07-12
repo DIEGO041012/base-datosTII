@@ -1,21 +1,21 @@
 <?php
 function conectarBD(){
-    $servidor="localhost";
-    $usuario="root";
-    $contraseña="HnvPhkdaVeZ4pD";
-    $basedatos="base_datos_cimbrdos";
+    $servidor = "localhost";
+    $usuario = "root";
+    $contraseña = "HnvPhkdaVeZ4pD";
+    $basedatos = "area_ti";
     
-    $conexion=new mysqli($servidor,$usuario,$contraseña,$basedatos);
+    $conexion = new mysqli($servidor, $usuario, $contraseña, $basedatos);
     
     if($conexion->connect_errno){
-        die("Error:".$conexion->connect_errno);
+        die("Error: ".$conexion->connect_errno);
     }
     return $conexion;
 }
 
-function obtenerDatosOrdenes(){
+function obtenerDatosFormularioInformacionpc(){
     $conexion = conectarBD();
-    $query = "SELECT fecha, cantidad FROM ordenes";
+    $query = "SELECT fechaSistema, modelo FROM formulario_informacionpc";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -25,9 +25,9 @@ function obtenerDatosOrdenes(){
     return $data;
 }
 
-function obtenerDatosRequisiciones(){
+function obtenerDatosFormulariosExistencias(){
     $conexion = conectarBD();
-    $query = "SELECT fechaSistema, cantidad FROM requisiciones";
+    $query = "SELECT fecha, cantidad FROM formularios_existencias";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -37,9 +37,9 @@ function obtenerDatosRequisiciones(){
     return $data;
 }
 
-function obtenerDatosProductosTotales(){
+function obtenerDatosFormulariosInventario(){
     $conexion = conectarBD();
-    $query = "SELECT numero_op, gran_total FROM productos_totales";
+    $query = "SELECT fecha_ingreso, cantidad FROM formularios_inventario";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -49,9 +49,9 @@ function obtenerDatosProductosTotales(){
     return $data;
 }
 
-function obtenerDatosProductos(){
+function obtenerDatosFormulariosPrestamos(){
     $conexion = conectarBD();
-    $query = "SELECT fechaSistema, valor_total_prod FROM productos";
+    $query = "SELECT fechaSistema, articulo FROM formularios_prestamos";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -61,9 +61,9 @@ function obtenerDatosProductos(){
     return $data;
 }
 
-function obtenerDatosMaterialesPorProducto(){
+function obtenerDatosFormulariosUsuarios(){
     $conexion = conectarBD();
-    $query = "SELECT codigo_producto, SUM(cantidad) as total_cantidad FROM materiales_por_producto GROUP BY codigo_producto";
+    $query = "SELECT fecha, nombre_responsable FROM formularios_usuarios";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -73,88 +73,12 @@ function obtenerDatosMaterialesPorProducto(){
     return $data;
 }
 
-function obtenerDatosProductosLineaBlanca(){
-    $conexion = conectarBD();
-    $query = "SELECT codigo_producto, nombre_producto FROM productos WHERE proceso = 'Proceso 1, Proceso 2, Proceso 3'";
-    $result = $conexion->query($query);
-    $data = array();
-    while($row = $result->fetch_assoc()){
-        $data[] = $row;
-    }
-    $conexion->close();
-    return $data;
-}
-
-function obtenerDatosProductosLineaGris(){
-    $conexion = conectarBD();
-    $query = "SELECT codigo_producto, nombre_producto FROM productos WHERE proceso = 'Proceso 1'";
-    $result = $conexion->query($query);
-    $data = array();
-    while($row = $result->fetch_assoc()){
-        $data[] = $row;
-    }
-    $conexion->close();
-    return $data;
-}
-
-function obtenerDatosProductosOP(){
-    $conexion = conectarBD();
-    $query = "SELECT numero_op, cantidad_producto, total FROM productos_op";
-    $result = $conexion->query($query);
-    $data = array();
-    while($row = $result->fetch_assoc()){
-        $data[] = $row;
-    }
-    $conexion->close();
-    return $data;
-}
-function obtenerDatosActivoPlanta(){
-    $conexion = conectarBD();
-    $query = "SELECT nombre, cargo FROM activo_planta";
-    $result = $conexion->query($query);
-    $data = array();
-    while($row = $result->fetch_assoc()){
-        $data[] = $row;
-    }
-    $conexion->close();
-    return $data;
-}
-
-function obtenerDatosActivoObra(){
-    $conexion = conectarBD();
-    $query = "SELECT Nombre, Cargo FROM activo_obra";
-    $result = $conexion->query($query);
-    $data = array();
-    while($row = $result->fetch_assoc()){
-        $data[] = $row;
-    }
-    $conexion->close();
-    return $data;
-}
-
-function obtenerDatosEmpleadosPorCargo(){
-    $conexion = conectarBD();
-    $query = "SELECT Cargo, COUNT(*) as total FROM empleados GROUP BY Cargo";
-    $result = $conexion->query($query);
-    $data = array();
-    while($row = $result->fetch_assoc()){
-        $data[] = $row;
-    }
-    $conexion->close();
-    return $data;
-}
 $datos = array(
-    "ordenes" => obtenerDatosOrdenes(),
-    "requisiciones" => obtenerDatosRequisiciones(),
-    "productos_totales" => obtenerDatosProductosTotales(),
-    "productos" => obtenerDatosProductos(),
-    "materiales_por_producto" => obtenerDatosMaterialesPorProducto(),
-    "productos_linea_blanca" => obtenerDatosProductosLineaBlanca(),
-    "productos_linea_gris" => obtenerDatosProductosLineaGris(),
-    "productos_op" => obtenerDatosProductosOP(),
-    "activo_planta" => obtenerDatosActivoPlanta(),
-    "activo_obra" => obtenerDatosActivoObra(),
-    "empleados_por_cargo" => obtenerDatosEmpleadosPorCargo()
+    "formulario_informacionpc" => obtenerDatosFormularioInformacionpc(),
+    "formularios_existencias" => obtenerDatosFormulariosExistencias(),
+    "formularios_inventario" => obtenerDatosFormulariosInventario(),
+    "formularios_prestamos" => obtenerDatosFormulariosPrestamos(),
+    "formularios_usuarios" => obtenerDatosFormulariosUsuarios()
 );
 
 header('Content-Type: application/json');
