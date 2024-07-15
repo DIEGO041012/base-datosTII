@@ -53,12 +53,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="./cdn.tailwindcss.com">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="./principal.css">
+  <link rel="stylesheet" href="../public/img/css/principal.css">
   <title>inicio</title>
 </head>
 <body>
 <div class="">
-        <img src="./img/logo_dan-removebg-preview.png" alt="logo" class="mx-auto h-54 w-64" >
+        <img src="../public/img/logodan.png" alt="logo" class="mx-auto h-54 w-64" >
     </div>
   <h1 class="sm:text-center text-5xl">
     Area TI

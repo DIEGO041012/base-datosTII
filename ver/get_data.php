@@ -13,9 +13,9 @@ function conectarBD(){
     return $conexion;
 }
 
-function obtenerDatosFormularioInformacionpc(){
+function obtenerDatosFormularioInformacionpc() {
     $conexion = conectarBD();
-    $query = "SELECT fechaSistema, modelo FROM formulario_informacionpc";
+    $query = "SELECT modelo, COUNT(*) as cantidad FROM formulario_informacionpc GROUP BY modelo";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -24,6 +24,7 @@ function obtenerDatosFormularioInformacionpc(){
     $conexion->close();
     return $data;
 }
+
 
 function obtenerDatosFormulariosExistencias(){
     $conexion = conectarBD();
@@ -49,9 +50,9 @@ function obtenerDatosFormulariosInventario(){
     return $data;
 }
 
-function obtenerDatosFormulariosPrestamos(){
+function obtenerDatosFormulariosPrestamos() {
     $conexion = conectarBD();
-    $query = "SELECT fechaSistema, articulo FROM formularios_prestamos";
+    $query = "SELECT articulo, COUNT(*) as cantidad FROM formularios_prestamos GROUP BY articulo";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -61,9 +62,10 @@ function obtenerDatosFormulariosPrestamos(){
     return $data;
 }
 
-function obtenerDatosFormulariosUsuarios(){
+
+function obtenerDatosFormulariosUsuarios() {
     $conexion = conectarBD();
-    $query = "SELECT fecha, nombre_responsable FROM formularios_usuarios";
+    $query = "SELECT fecha, COUNT(nombre_responsable) as cantidad_responsables FROM formularios_usuarios GROUP BY fecha";
     $result = $conexion->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
@@ -72,6 +74,7 @@ function obtenerDatosFormulariosUsuarios(){
     $conexion->close();
     return $data;
 }
+
 
 $datos = array(
     "formulario_informacionpc" => obtenerDatosFormularioInformacionpc(),

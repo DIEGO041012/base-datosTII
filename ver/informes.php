@@ -124,7 +124,7 @@
       <div class="tile">
         <!--<h3 class="tile-title">Estadistica de ausencias</h3>-->
         <div class="ratio ratio-16x9">
-          <div id="chart1" style="width: 650px; height: 400px;"></div>
+          <div id="chart1" style="width: 650px; height: 450px;"></div>
         </div>
       </div>
     </div>
@@ -132,7 +132,7 @@
       <div class="tile">
         <!--<h3 class="tile-title">Estadistica de rendimiento</h3>-->
         <div class="ratio ratio-16x9">
-          <div id="chart2" style="width: 650px; height: 400px;"></div>
+          <div id="chart2" style="width: 600px; height: 380px;"></div>
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@
       <div class="tile">
         <!--<h3 class="tile-title">Estadistica de Procesos</h3>-->
         <div class="ratio ratio-16x9">
-          <div id="chart3" style="width: 650px; height: 400px;"></div>
+          <div id="chart3" style="width: 600px; height: 380px;"></div>
         </div>
       </div>
     </div>
@@ -148,7 +148,7 @@
       <div class="tile">
         <!--<h3 class="tile-title">Estadística de Inventario</h3>-->
         <div class="ratio ratio-16x9">
-          <div id="chart4" style="width: 650px; height: 400px;"></div> <!-- Corregido el identificador -->
+          <div id="chart4" style="width: 600px; height: 380px;"></div> <!-- Corregido el identificador -->
         </div>
       </div>
     </div>
@@ -156,7 +156,7 @@
       <div class="tile">
         <!--<h3 class="tile-title">Estadística de Costos</h3>-->
         <div class="ratio ratio-16x9">
-          <div id="chart5" style="width: 650px; height: 380px;"></div>
+          <div id="chart5" style="width: 570px; height: 380px;"></div>
         </div>
       </div>
     </div>
@@ -164,19 +164,19 @@
       <div class="tile">
         <div class="ratio ratio-16x9">
         <!--<h3 class="tile-title">Estadística de productividad</h3>-->
-          <div id="chart6" style="width: 650px; height: 400px;"></div>
+          <div id="chart6" style="width: 580px; height: 400px;"></div>
         </div>
       </div>
     </div>
-   <!-- <div class="col-md-12">
+   <div class="col-md-12">
       <div class="tile">
         <div class="ratio ratio-16x9">
-        <h3 class="tile-title">Estadística de ausencias</h3>-->
-         <!-- <div id="chartEmpleados" style="width: 100%; height: 100%;"></div>
+        <h3 class="tile-title">Estadística de ausencias</h3>
+         <div id="chart7" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
     </div>
-  </div>-->
+  </div>
 </main>
     <!-- Essential javascripts for application to work-->
     <!-- aca va la logica de las graficas-->
@@ -188,23 +188,31 @@
   .then(response => response.json())
   .then(data => {
     // Gráfica de Información de PCs
-    var xAxisDataInformacionpc = data.formulario_informacionpc.map(item => item.fechaSistema);
-    var seriesDataInformacionpc = data.formulario_informacionpc.map(item => item.modelo);
+    var xAxisDataInformacionpc = data.formulario_informacionpc.map(item => item.modelo);
+    var seriesDataInformacionpc = data.formulario_informacionpc.map(item => ({ value: item.cantidad, name: item.modelo }));
+
     var option1 = {
-      toolbox: {
-        top: '10%', right: '5%',
-        feature: {
-          magicType: { show: true, type: ['line', 'bar'] },
-          restore: { show: true },
-          saveAsImage: { show: true }
-        }
+      tooltip: {
+        trigger: 'item'
       },
-      title: { text: 'Información de PCs' },
-      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-      xAxis: { type: 'category', data: xAxisDataInformacionpc },
-      yAxis: { type: 'value' },
-      series: [{ name: 'Modelo', type: 'bar', data: seriesDataInformacionpc }]
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      series: [
+        {
+          name: 'Modelo de PCs',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          center: ['50%', '70%'],
+          // adjust the start and end angle
+          startAngle: 180,
+          endAngle: 360,
+          data: seriesDataInformacionpc
+        }
+      ]
     };
+
     var chart1 = echarts.init(document.getElementById('chart1'));
     chart1.setOption(option1);
 
@@ -251,46 +259,136 @@
     chart3.setOption(option3);
 
     // Gráfica de Préstamos
-    var xAxisDataPrestamos = data.formularios_prestamos.map(item => item.fechaSistema);
-    var seriesDataPrestamos = data.formularios_prestamos.map(item => item.articulo);
-    var option4 = {
-      toolbox: {
-        top: '10%', right: '5%',
-        feature: {
-          magicType: { show: true, type: ['line', 'bar'] },
-          restore: { show: true },
-          saveAsImage: { show: true }
-        }
-      },
-      title: { text: 'Préstamos por Fecha' },
-      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-      xAxis: { type: 'category', data: xAxisDataPrestamos },
-      yAxis: { type: 'value' },
-      series: [{ name: 'Artículo', type: 'bar', data: seriesDataPrestamos }]
-    };
-    var chart4 = echarts.init(document.getElementById('chart4'));
-    chart4.setOption(option4);
+    var yAxisDataPrestamos = data.formularios_prestamos.map(item => item.articulo);
+var seriesDataPrestamos = data.formularios_prestamos.map(item => item.cantidad);
+
+var option4 = {
+  xAxis: {
+    max: 'dataMax'
+  },
+  yAxis: {
+    type: 'category',
+    data: yAxisDataPrestamos,
+    inverse: true,
+    animationDuration: 300,
+    animationDurationUpdate: 300,
+    max: 2 // only the largest 3 bars will be displayed
+  },
+  series: [
+    {
+      realtimeSort: true,
+      name: 'Cantidad',
+      type: 'bar',
+      data: seriesDataPrestamos,
+      label: {
+        show: true,
+        position: 'right',
+        valueAnimation: true
+      }
+    }
+  ],
+  legend: {
+    show: true
+  },
+  animationDuration: 0,
+  animationDurationUpdate: 3000,
+  animationEasing: 'linear',
+  animationEasingUpdate: 'linear'
+};
+
+var chart4 = echarts.init(document.getElementById('chart4'));
+chart4.setOption(option4);
+
+function run() {
+  for (var i = 0; i < seriesDataPrestamos.length; ++i) {
+    if (Math.random() > 0.9) {
+      seriesDataPrestamos[i] += Math.round(Math.random() * 2000);
+    } else {
+      seriesDataPrestamos[i] += Math.round(Math.random() * 200);
+    }
+  }
+  chart4.setOption({
+    series: [
+      {
+        type: 'bar',
+        data: seriesDataPrestamos
+      }
+    ]
+  });
+}
+
+setTimeout(function () {
+  run();
+}, 0);
+
+setInterval(function () {
+  run();
+}, 3000);
+
 
     // Gráfica de Usuarios
-    var xAxisDataUsuarios = data.formularios_usuarios.map(item => item.fecha);
-    var seriesDataUsuarios = data.formularios_usuarios.map(item => item.nombre_responsable);
-    var option5 = {
-      toolbox: {
-        top: '10%', right: '5%',
-        feature: {
-          magicType: { show: true, type: ['line', 'bar'] },
-          restore: { show: true },
-          saveAsImage: { show: true }
+    // Supongamos que `data` contiene los datos devueltos por la función PHP.
+var fechas = data.formularios_usuarios.map(item => item.fecha);
+var responsables = data.formularios_usuarios.map(item => item.cantidad_responsables);
+// Si tienes más series de datos, puedes mapearlas de manera similar.
+
+var option5 = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999'
+      }
+    }
+  },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ['Responsables']
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: fechas,
+      axisPointer: {
+        type: 'shadow'
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: 'Responsables',
+      min: 0,
+      axisLabel: {
+        formatter: '{value}'
+      }
+    }
+  ],
+  series: [
+    {
+      name: 'Responsables',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + ' personas';
         }
       },
-      title: { text: 'Usuarios por Fecha' },
-      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-      xAxis: { type: 'category', data: xAxisDataUsuarios },
-      yAxis: { type: 'value' },
-      series: [{ name: 'Nombre Responsable', type: 'bar', data: seriesDataUsuarios }]
-    };
-    var chart5 = echarts.init(document.getElementById('chart5'));
-    chart5.setOption(option5);
+      data: responsables
+    }
+  ]
+};
+
+var chart5 = echarts.init(document.getElementById('chart5'));
+chart5.setOption(option5);
+
   })
   .catch(error => console.error('Error al obtener los datos:', error));
 </script>
