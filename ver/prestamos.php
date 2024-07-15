@@ -20,7 +20,7 @@ $conexion = conectarBD();
 <?php include 'heard.html'; ?>
 
 <section class="container mt-4 text-center">
-    <img src="./img/logo_dan-removebg-preview.png" alt="" class="img-fluid" style="max-width: 200px;">
+    <img src="" alt="" class="img-fluid" style="max-width: 200px;">
     <h1 class="sm:text-center text-5xl">Prestamos TI</h1>
     <br><br>
 </section>
@@ -120,6 +120,6 @@ $conexion = conectarBD();
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="./js/prestamos.js"></script>
+<script src="../public/img/js/prestamos.js"></script>
 </body>
 </html>

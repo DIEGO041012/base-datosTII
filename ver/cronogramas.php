@@ -19,7 +19,7 @@ conectarBD();
 <?php include 'heard.html'; ?>
 
 <section class="container mt-4 text-center">
-    <img src="./img/logo_dan-removebg-preview.png" alt="" class="img-fluid" style="max-width: 200px;">
+    <!--<img src="../public/img/logodan.png" alt="" class="img-fluid" style="max-width: 200px;">-->
     <h1 class="sm:text-center text-5xl">Cronograma</h1>
     <br><br>
 </section>
@@ -67,7 +67,7 @@ conectarBD();
 </div>
 
 <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
-<script src="./js/cronograma.js"></script>
+<script src="../public/img/js/cronograma.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
 <script src="https://cdn.tailwindcss.com"></script>
